@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",                     
+    "module": "commonjs",                   
+    "strict": true,                          
+    "lib": ["dom", "esnext"],               
+    "esModuleInterop": true,               
+    "forceConsistentCasingInFileNames": true, 
+    "skipLibCheck": true,                  
+    "outDir": "./dist",  
+    "rootDir": "./src"                       
+  },
+  "include": ["src/**/*"]
+}

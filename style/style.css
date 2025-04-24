@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    background: linear-gradient(45deg, #FADCA7, #EE819B);
+  }
+
+.list-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.list-container {
+  width: 100%;
+  max-width: 580px;
+  height: 740px;
+  background-color: #3d4249;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.list-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #2d3239;
+}
+.list-header > h1 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 300;
+    padding: 15px 0;
+}
+.date-content{
+    padding:30px 60px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+}
+
+#weekdays {
+    color: #fff;
+    font-size: 30px;
+}
+.list-date {
+    width: 200px;
+    text-align: center;
+}
+.list-date > div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: #a0a0a0;
+}
+.arrow-prev, .arrow-next {
+    position: relative;
+    font-size: 0;
+    cursor: pointer;
+}
+.arrow-prev:before {
+    position: absolute;
+    left: 0;
+    top: -13px;
+    content: '';
+    width: 22px; 
+    height: 22px; 
+    border-top: 2px solid #a0a0a0; 
+    border-right: 2px solid #a0a0a0; 
+    transform: rotate(225deg);
+}
+.arrow-next:before {
+    position: absolute;
+    left: 0;
+    top: -13px;
+    content: '';
+    width: 22px; 
+    height: 22px; 
+    border-top: 2px solid #a0a0a0; 
+    border-right: 2px solid #a0a0a0; 
+    transform: rotate(45deg);
+}
+.edit-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 60px 30px 60px;
+    display: flex;
+    gap: 15px;
+}
+.edit-content label {
+    flex: 1;
+}
+.edit-content textarea {
+    resize: none;
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    color: #fff;;
+    line-height: 1.5;
+    background-color: #363A3F;
+    border:1px solid #2d3239;
+    padding: 3px;
+    overflow: hidden;
+}
+.edit-content textarea:focus {
+    outline: none;
+}
+.edit-content textarea::placeholder {
+    line-height: 27px;
+}
+.regist-btn {
+    background: #363A3F;
+    border: 1px solid #2d3239;
+    width: 50px;
+    height: 35px;
+    color: #a0a0a0;
+    cursor: pointer;
+}
+
+.todolist-content {
+    padding:0 60px;
+}
+.line {
+    border-top: 2px solid #2d3239;
+    margin: 20px 0;
+}
+.list {
+    width: 100%;
+    height: 270px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+.list::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+}
+
+.list::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+.list-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.list-item > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.list-item > div > p {
+    padding:10px 0;
+    color: #d1d1d1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #2d3239;
+    border-radius: 4px;
+    background-color: #363A3F;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: #d1d1d1;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    left: 4px;
+    
+}
+/* .dots-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+.dots-menu span {
+  width: 4px;
+  height: 4px;
+  background-color: #d1d1d1;
+  border-radius: 50%;
+  display: block;
+} */
+
+.close {
+    display:inline-block;
+    display:inline; 
+    background: #363A3F;
+    border: 1px solid #2d3239; 
+    cursor: pointer;
+}
+.close:after {
+    display: inline-block;
+    content: "\00d7"; 
+    font-size:20px;
+    color: #fff;
+}
+
+.voice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    right: 50%;
+}
+.voice button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.done {
+    text-decoration: line-through;
+    opacity: 0.6; 
+}
+#overlay {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5);  
+    align-items: center; 
+    justify-content: center; 
+    color:#fff;
+    font-size: 24px;
+    z-index: 1000;
+  }

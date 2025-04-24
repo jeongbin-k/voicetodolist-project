@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speech-to-do list</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/reset.css">
+    <script src="dist/main.js"></script>
+    <script src="dist/speech.js"></script>
+</head>
+<body>
+    <div class="list-wrap">
+        <div class="list-container">
+            <div class="list-header">
+                <h1>TO-DO LIST</h1>
+            </div>
+            <section class="date-content">
+                <span class="arrow-prev">이전 화살표</span>
+                <div class="list-date">
+                    <h1 id="weekdays"></h1>
+                    <div>
+                        <p id="month"></p>
+                        <p id="day"></p>
+                        <p id="year"></p>
+                    </div>
+                </div>
+                <span class="arrow-next">다음 화살표</sapn>
+            </section>
+            <section class="edit-content">
+                <label for="txtSource">
+                    <textarea class="edit-box" id="txtSource" placeholder="리스트를 추가하세요." name="txtSource"></textarea>
+                </label>
+                <button class="regist-btn">등록</button>
+            </section>
+            <section class="todolist-content">
+                <div class="line"></div>
+                <div class="list">
+                    <!-- <div class="list-item">
+                        <div>
+                            <input type="checkbox">
+                            <p></p>
+                        </div>
+                        <button class="close"></button>
+                    </div> -->
+                </div>
+            </section>
+            <div id="overlay">
+            </div>
+            <div class="voice">
+                <button>
+                    <img src="/images/voice-icon.png">
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
