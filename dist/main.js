@@ -1,5 +1,5 @@
 "use strict";
-// ��¥ ����
+// 날짜 관련
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 let currentDate = new Date();
@@ -17,9 +17,9 @@ function renderDate(date) {
     if (yearEl)
         yearEl.textContent = `${date.getFullYear()}`;
 }
-// ��¥���� key �����
+// 날짜별로 key 만들기
 function getDateKey(date) {
-    return `todos-${date.toISOString().slice(0, 10)}`; // ��: todos-2025-04-24
+    return `todos-${date.toISOString().slice(0, 10)}`; // 예: todos-2025-04-24
 }
 function saveToLocalStorage(date, items) {
     const key = getDateKey(date);
@@ -49,13 +49,13 @@ function renderTodoItems(date) {
         list.appendChild(listItem);
     });
 }
-// ��¥ �̵� ��ư
+// 날짜 이동 버튼
 document.addEventListener('DOMContentLoaded', () => {
     renderDate(currentDate);
     renderTodoItems(currentDate);
     const prevBtn = document.querySelector('.arrow-prev');
     const nextBtn = document.querySelector('.arrow-next');
-    // ���� ��ư
+    // 이전 버튼
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             currentDate.setDate(currentDate.getDate() - 1);
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderTodoItems(currentDate);
         });
     }
-    // ���� ��ư
+    // 다음 버튼
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             currentDate.setDate(currentDate.getDate() + 1);
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderTodoItems(currentDate);
         });
     }
-    // ����Ʈ ��� ó��
+    // 리스트 등록 처리
     const input = document.getElementById('txtSource');
     const button = document.querySelector('.regist-btn');
     const list = document.querySelector('.list');
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderTodoItems(currentDate);
             input.value = '';
         });
-        // üũ �ڽ� ó��
+        // 체크 박스 처리
         list.addEventListener('change', (e) => {
             const target = e.target;
             if (target.type === 'checkbox') {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderTodoItems(currentDate);
             }
         });
-        // ����Ʈ ���� ó��
+        // 리스트 삭제 처리
         list.addEventListener('click', (e) => {
             var _a;
             const target = e.target;

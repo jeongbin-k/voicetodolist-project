@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(() => {
             const recognition = new SpeechRecognition();
             recognition.lang = 'ko-KR';
-            recognition.interimResults = true; // 여기서 true로 설정
+            recognition.interimResults = true;
             recognition.maxAlternatives = 1;
             if (micBtn && input) {
                 micBtn.addEventListener('click', () => {
                     recognition.start();
-                    overlay.style.display = 'flex'; // display: flex로 변경하여 overlay를 보이게 함
+                    overlay.style.display = 'flex';
                     overlay.innerHTML = '<p>저에게 말씀해주세요!</p>'; // 안내 메시지 추가
                 });
                 recognition.addEventListener('result', (event) => {

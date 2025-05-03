@@ -1,4 +1,4 @@
-// ³¯Â¥ °ü·Ã
+// ë‚ ì§œ ê´€ë ¨
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -16,15 +16,15 @@ function renderDate(date: Date) {
   if (yearEl) yearEl.textContent = `${date.getFullYear()}`;
 }
 
-// Todo Å¸ÀÔ
+// Todo íƒ€ìž…
 interface TodoItem {
   text: string;
   checked: boolean;
 }
 
-// ³¯Â¥º°·Î key ¸¸µé±â
+// ë‚ ì§œë³„ë¡œ key ë§Œë“¤ê¸°
 function getDateKey(date: Date): string {
-  return `todos-${date.toISOString().slice(0, 10)}`; // ¿¹: todos-2025-04-24
+  return `todos-${date.toISOString().slice(0, 10)}`; // ì˜ˆ: todos-2025-04-24
 }
 
 function saveToLocalStorage(date: Date, items: TodoItem[]) {
@@ -60,14 +60,14 @@ function renderTodoItems(date: Date) {
   });
 }
 
-// ³¯Â¥ ÀÌµ¿ ¹öÆ°
+// ë‚ ì§œ ì´ë™ ë²„íŠ¼
 document.addEventListener('DOMContentLoaded', () => {
   renderDate(currentDate);
   renderTodoItems(currentDate);
 
   const prevBtn = document.querySelector('.arrow-prev');
   const nextBtn = document.querySelector('.arrow-next');
-  // ´ÙÀ½ ¹öÆ°
+  // ì´ì „ ë²„íŠ¼
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       currentDate.setDate(currentDate.getDate() - 1);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderTodoItems(currentDate);
     });
   }
-  // ÀÌÀü ¹öÆ°
+  // ë‹¤ìŒ ë²„íŠ¼
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       currentDate.setDate(currentDate.getDate() + 1);
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ¸®½ºÆ® µî·Ï Ã³¸®
+  // ë¦¬ìŠ¤íŠ¸ ë“±ë¡ ì²˜ë¦¬
   const input = document.getElementById('txtSource') as HTMLTextAreaElement;
   const button = document.querySelector('.regist-btn') as HTMLButtonElement;
   const list = document.querySelector('.list') as HTMLDivElement;
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       input.value = '';
     });
 
-    // Ã¼Å© ¹Ú½º Ã³¸®
+    // ì²´í¬ ë°•ìŠ¤ ì²˜ë¦¬
     list.addEventListener('change', (e: Event) => {
       const target = e.target as HTMLInputElement;
       if (target.type === 'checkbox') {
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // ¸®½ºÆ® »èÁ¦ Ã³¸®
+    // ë¦¬ìŠ¤íŠ¸ ì‚­ì œ ì²˜ë¦¬
     list.addEventListener('click', (e: Event) => {
       const target = e.target as HTMLElement;
       if (target.classList.contains('close')) {
